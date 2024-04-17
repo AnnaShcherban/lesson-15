@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 15</title>
+  </head>
+  <body>
+    <p>
+      Створити об’єкт «Авто». Авто Поля(властивості) Марка Розмір бака Кількість
+      наявних літрів Кількість місць Кількість пасажирів Методи (дії) Заправка
+      на вказану кількість літрів Виведення кількості пасажирів Додавання
+      пасажирів Висадка пасажирів
+    </p>
+    <script>
+      let auto = {
+        //властивості
+        brand: "Volvo",
+        tankSize: 2,
+        numberAvailableLiters: 1,
+        numberOfSeats: 4,
+        numberOfPasagers: 2,
+
+        //методи
+        fuelLoad: function (fuel) {
+          if (this.numberAvailableLiters + fuel > this.tankSize)
+            throw new Error(`Не вистачає місця`)
+          this.numberAvailableLiters += fuel
+        },
+        ////
+        getPassengers: function () {},
+        /////
+        additionPasagers: function (pasagers) {
+          this.numberOfPasagers += pasagers
+        },
+
+        breedingPasagers: function (pasagers) {
+          this.numberOfPasagers -= pasagers
+        },
+      }
+      document.write(auto.getPassengers())
+      document.write(auto.breedingPasagers(1))
+      document.write(auto.additionPasagers(2))
+      document.write(auto.fuelLoad())
+    </script>
+  </body>
+</html>

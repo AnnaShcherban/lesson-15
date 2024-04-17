@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 15</title>
+  </head>
+  <body>
+    <h1></h1>
+    <p>
+      Розробити клас «Керівник танців» Поля Масив імен хлопців Масив імен дівчат
+      Методи Метод випадкового вибору імені хлопця Метод випадкового вибору
+      імені дівчини Метод виведення пари для танців Метод run , який ініціює
+      через кожні 5 секунд виведення нової пари для танців
+    </p>
+    <script>
+      class bossDancing {
+        constructor(nameBoys, nameGirls) {
+          this.interval = interval
+          this.nameBoys = nameBoys
+          this.nameGirls = nameGirls
+        }
+        getRandomNameBoys() {
+          let random = Math.floor(Math.random() * 3)
+          return this.nameBoys[random]
+        }
+        getRandomNameGirls() {
+          let random = Math.floor(Math.random() * 3)
+          return this.nameGirls[random]
+        }
+        dancingDuet() {
+          return [this.getRandomNameBoys(), this.getRandomNameGirls()]
+        }
+        run() {
+          setInterval(() => {
+            alert(this.dancingDuet())
+          }, this.interval * 5000)
+        }
+      }
+
+      let nameGirls = ["Anna", "Yana", "Tanya"]
+      let nameBoys = ["Pavel", "Mike", "Vasyl"]
+    </script>
+  </body>
+</html>

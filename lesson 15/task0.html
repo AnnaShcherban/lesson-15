@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 15</title>
+  </head>
+  <body>
+    <h1>Задача 1</h1>
+    <p>
+      Дано два об’єкта. Обидва містять масив цілих чисел. При цьому у одному з
+      них є функція знаходження суми, а у іншому – функція для знаходження
+      добутку тих, які знаходяться між заданими мінімальним і максимальних
+      значенням. Використати обидва методи стосовно обидвох об’єктів
+      (використати call,apply)
+    </p>
+    <script>
+      let object1 = {
+        wholeNumbers: [23, 56, 78, 6],
+        sumNumbers: function () {
+          let sum = this.wholeNumbers.reduce((prevSum, el) => prevSum + el)
+          return sum
+        },
+      }
+      document.write(object1.sumNumbers())
+      let object2 = {
+        wholeNumbers: [2, 5, 6, 67, 78],
+        getProductNumbers: function (minNumber, maxNumber) {
+          let productSum = this.wholeNumbers.reduce(
+            (prevProduct, el) =>
+              el > minNumber && el < maxNumber ? prevProduct * el : prevProduct,
+            1
+          )
+          return productSum
+        },
+      }
+      document.write(object2.getProductNumbers(2, 78))
+    </script>
+  </body>
+</html>

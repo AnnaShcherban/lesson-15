@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson15</title>
+  </head>
+  <body>
+    <h1>Задача1</h1>
+    <p>Метод пострілу (задається позиція пострілу) Виведення ігрового поля</p>
+    <script>
+      let shootingGallery = {
+        fieldWithHares: [0, 1, 0, 0, 1, 1],
+        shoot: function (position) {
+          if (this.fieldWithHares[position] === 1) {
+            this.fieldWithHares[position] = 0
+            return true
+          }
+          return false
+        },
+        showFielHares: function () {
+          document.write(`${this.fieldWithHares}<br>`)
+        },
+      }
+      shootingGallery.showFielHares()
+      document.write(`Постріл по позиції 1<br>`)
+      shootingGallery.shoot(1)
+      shootingGallery.showFielHares()
+    </script>
+  </body>
+</html>
